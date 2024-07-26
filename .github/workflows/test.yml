@@ -24,7 +24,7 @@ jobs:
           cache: 'pip'
       - run: pip install -U flake8
       - name: Run python code lint
-        run: flake8 moltx
+        run: flake8 dilipredict
 
   tests:
     name: "Python ${{ matrix.py-version }} unit-tests"

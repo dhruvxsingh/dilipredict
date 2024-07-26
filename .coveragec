@@ -7,3 +7,5 @@ relative_files = True
 exclude_lines =
 	^VERSION =
 	raise NotImplementedError
+
+ignore_errors = True
