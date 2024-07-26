@@ -1,7 +1,7 @@
 from dilipredict import models, pipelines
 
 
-def test_MutSmiReg(image_loader):
+def test_DILIPredict(image_loader):
     test_img_path = 'tests/data/test_img.tiff'
     image_files = [
         [test_img_path] * 10,
