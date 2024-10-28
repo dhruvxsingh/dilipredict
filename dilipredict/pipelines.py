@@ -1,4 +1,5 @@
 import torch
+import typing
 import torch.nn as nn
 from dilipredict.image_loader import ImageLoader
 
@@ -12,11 +13,12 @@ class DILIPredict:
         self.model = model
         self.device = device
 
-    def __call__(self, img_dir: str) -> int:
+    def __call__(self, img_files: typing.Sequence) -> int:
         '''
-        img_dir: a sample image file dir
+        img_files: img_files: [time_0_list, ..., time_n_list]
+            time_0_list: [img_0_path, ..., img_n_path]
         '''
-        img_x = self.image_loader.encoder(img_dir).unsqueeze(0)
+        img_x = self.image_loader.encoder(img_files).unsqueeze(0)
         out = self.model(img_x)
         out_label = out.argmax(dim=-1).item()
         probability = out.cpu().numpy().tolist()[0]
