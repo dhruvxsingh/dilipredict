@@ -30,3 +30,8 @@ pip install -r requirements_updated.txt
 touch demo.py
 python demo.py
 git status
+git add .
+git commit -m "demo"
+git push
+touch README_SETUP.md
+cat README_SETUP.md 
